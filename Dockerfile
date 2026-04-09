@@ -1,14 +1,13 @@
-# Use lightweight Nginx image
+# Use nginx
 FROM nginx:alpine
 
-# Remove default nginx static files
+# Remove default nginx files
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copy all project files into nginx directory
-COPY . /usr/share/nginx/html
+# Copy only your project files (important)
+COPY SCM_Project/ /usr/share/nginx/html/
 
-# Expose port 80
+# Expose port
 EXPOSE 80
 
-# Start nginx server
 CMD ["nginx", "-g", "daemon off;"]
