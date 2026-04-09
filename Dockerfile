@@ -1,5 +1,4 @@
 FROM nginx:alpine
-
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy everything from CURRENT folder
