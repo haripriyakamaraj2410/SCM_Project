@@ -1,8 +1,9 @@
 FROM nginx:alpine
 
+# Remove default nginx welcome page
 RUN rm -rf /usr/share/nginx/html/*
 
-# Correct line
+# Copy all your website files (index.html, css, images, etc.)
 COPY . /usr/share/nginx/html/
 
 EXPOSE 80
